@@ -26,6 +26,11 @@ public class AgendaView implements OperationControllerVisitor {
         new ErrorView().interact(nullController);
     }
 
+    @Override
+    public void visit(RemoveController removeController) {
+        new RemoveView().interact(removeController);
+    }
+
     public String print() {
         return new InputView().print();
     }

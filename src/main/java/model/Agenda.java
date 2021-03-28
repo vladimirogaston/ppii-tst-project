@@ -18,4 +18,12 @@ public class Agenda {
     public Set<Persona> readAll() {
         return this.personaSet;
     }
+
+    public void remove(String nombre) {
+        personaSet.forEach(p-> {
+            if(p.getNombre().equals(nombre)) {
+                personaSet.remove(p);
+            }
+        });
+    }
 }

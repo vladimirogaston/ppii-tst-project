@@ -16,6 +16,7 @@ public class InterpreterControllerImpl implements InterpreterController {
         this.controllers = new HashMap<String, OperationController>();
         this.controllers.put("add -> p:", new LocalAddController(agenda));
         this.controllers.put("lst -> p:", new LocalQueryController(agenda));
+        this.controllers.put("rem -> p:", new LocalRemoveController(agenda));
     }
 
     @Override
