@@ -35,6 +35,6 @@ public class ApplicationView implements Observer {
 
     @Override
     public void update(Object object) {
-        io.writeln(prompt + "Peripheral new state: " + object.toString());
+        io.writeln(prompt + "peripheral new state: " + object.toString());
     }
 }
