@@ -1,9 +1,9 @@
 package view;
 
-import controller.ApplicationController;
 import model.CommandExecutor;
+import model.peripheral.Observer;
 
-public class ApplicationView {
+public class ApplicationView implements Observer {
 
     private static final String prompt = "APP::";
     private String input;
@@ -11,9 +11,9 @@ public class ApplicationView {
     private ApplicationController controller;
 
     public ApplicationView(CommandExecutor commandExecutor) {
-        this.controller = new ApplicationController(this, commandExecutor);
-        this.io = new IO();
-        this.input = "";
+        controller = new ApplicationController(this, commandExecutor);
+        io = new IO();
+        clear();
     }
 
     public void display(String message) {
@@ -21,8 +21,8 @@ public class ApplicationView {
     }
 
     public void display() {
-        this.input = io.readString(prompt);
-        this.controller.actionPerformed();
+        input = io.readString(prompt);
+        controller.actionPerformed();
     }
 
     public void clear() {
@@ -31,5 +31,10 @@ public class ApplicationView {
 
     public String getInput() {
         return input;
+    }
+
+    @Override
+    public void update(Object object) {
+        io.writeln(prompt + "Peripheral new state: " + object.toString());
     }
 }

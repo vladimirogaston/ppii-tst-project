@@ -1,4 +1,4 @@
-package model;
+package model.peripheral;
 
 public interface Observer {
 

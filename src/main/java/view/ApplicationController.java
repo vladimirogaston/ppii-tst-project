@@ -1,13 +1,10 @@
-package controller;
+package view;
 
 import model.CommandExecutor;
 import model.ExecutionException;
 import model.InvalidCommandException;
-import view.ApplicationView;
 
 public class ApplicationController {
-
-    private static final String EXECUTION_OK = "command execution satus [OK]";
 
     private static final String EXECUTION_FAIL = "command execution status [fails]";
 
@@ -25,8 +22,7 @@ public class ApplicationController {
         try {
             commandExecutor.execute(input);
             view.clear();
-            view.display(EXECUTION_OK);
-        } catch(InvalidCommandException | ExecutionException exception) {
+        } catch(InvalidCommandException | IllegalArgumentException | ExecutionException exception) {
             view.display(EXECUTION_FAIL + " " + exception.getMessage());
         }
     }
