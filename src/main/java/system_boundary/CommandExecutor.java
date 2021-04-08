@@ -1,6 +1,4 @@
-package model;
-
-import model.peripheral.CommandCreator;
+package system_boundary;
 
 import java.util.*;
 import java.util.stream.Collectors;

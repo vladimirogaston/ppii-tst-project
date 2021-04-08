@@ -1,4 +1,4 @@
-package model;
+package system_boundary;
 
 public interface Command {
 

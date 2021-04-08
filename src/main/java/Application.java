@@ -1,29 +1,28 @@
-import model.CommandExecutor;
-import model.peripheral.AirConditionerCommandsCreator;
-import model.peripheral.CommandCreator;
-import model.peripheral.RadioCommandsCreator;
+import system_boundary.AppCommandCreator;
+import system_boundary.CommandExecutor;
+import system_boundary.CommandCreator;
 import view.ApplicationView;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public class Application {
 
     CommandExecutor commandExecutor;
     ApplicationView view;
-
-    private LinkedList<CommandCreator> makeCommandCreator() {
-        AirConditionerCommandsCreator acCommandCreator = new AirConditionerCommandsCreator();
-        RadioCommandsCreator radioCommandsCreator = new RadioCommandsCreator();
-        LinkedList<CommandCreator> commandCreatorList = new LinkedList<>();
-        commandCreatorList.add(acCommandCreator);
-        commandCreatorList.add(radioCommandsCreator);
-        return commandCreatorList;
-    }
+    List<CommandCreator> creators;
 
     public Application() {
-        LinkedList<CommandCreator> creators = makeCommandCreator();
+        init();
+    }
+
+    private void init() {
+        creators = new AppCommandCreator().makeCommandCreator();
         commandExecutor = new CommandExecutor(creators);
         view = new ApplicationView(commandExecutor);
+        attachObservers();
+    }
+
+    private void attachObservers() {
         creators.forEach(creator -> creator.attachObserver(view));
     }
 

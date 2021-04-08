@@ -1,7 +1,7 @@
 package view;
 
-import model.CommandExecutor;
-import model.peripheral.Observer;
+import system_boundary.CommandExecutor;
+import model.Observer;
 
 public class ApplicationView implements Observer {
 

@@ -1,7 +1,7 @@
-package model.peripheral;
+package system_boundary;
 
-import model.Command;
-import model.ExecutionException;
+import model.AirConditioner;
+import model.Observer;
 
 import java.util.HashMap;
 import java.util.Map;

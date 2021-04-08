@@ -1,6 +1,7 @@
-package model.peripheral;
+package system_boundary;
 
-import model.Command;
+import model.Observer;
+import system_boundary.Command;
 
 import java.util.Map;
 

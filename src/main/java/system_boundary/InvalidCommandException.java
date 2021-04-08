@@ -1,4 +1,4 @@
-package model;
+package system_boundary;
 
 public class InvalidCommandException extends RuntimeException {
 

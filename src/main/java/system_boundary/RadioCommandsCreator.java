@@ -1,7 +1,10 @@
-package model.peripheral;
+package system_boundary;
 
-import model.Command;
-import model.ExecutionException;
+import model.Observer;
+import model.Radio;
+import system_boundary.Command;
+import system_boundary.CommandCreator;
+import system_boundary.ExecutionException;
 
 import java.util.HashMap;
 import java.util.Map;

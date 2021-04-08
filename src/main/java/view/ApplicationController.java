@@ -1,8 +1,8 @@
 package view;
 
-import model.CommandExecutor;
-import model.ExecutionException;
-import model.InvalidCommandException;
+import system_boundary.CommandExecutor;
+import system_boundary.ExecutionException;
+import system_boundary.InvalidCommandException;
 
 public class ApplicationController {
 
